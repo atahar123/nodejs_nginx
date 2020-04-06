@@ -10,6 +10,7 @@ To use it import it in your own cookbook and run it in the recipes.
 - Chef, InSpec, ChefSpec
 - Importing cookbooks (this will require our search)
 - Attributes, and templates
+- TDD
 
 
 ## Installation section
