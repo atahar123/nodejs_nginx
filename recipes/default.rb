@@ -8,6 +8,7 @@ end
 
 package 'nginx'
 package 'nodejs'
+package 'npm'
 
 package %w(nginx npm)
 
