@@ -7,13 +7,10 @@ apt_update 'update_sources' do
 end
 
 package 'nginx'
-package 'nodejs'
-package 'npm'
+# package 'nodejs'
+# package 'npm'
 
-package %w(nginx npm)
-
-npm_package 'pm2'
-npm_package 'react'
+# package %w(nginx npm)
 
 service 'nginx' do
   action [:enable, :start]
@@ -21,6 +18,7 @@ end
 
 template '/etc/nginx/sites-available/proxy.conf.erb' do
   source 'proxy.conf.erb'
+  variables proxy_port: node['nginx']['proxy_port']
   notifies :restart, 'service[nginx]'
 end
 
@@ -36,5 +34,5 @@ end
 
 include_recipe 'nodejs'
 
-nodejs_npm 'pm2'
-nodejs_npm 'react'
+npm_package 'pm2'
+npm_package 'react'

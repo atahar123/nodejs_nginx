@@ -20,7 +20,7 @@ end
 
 describe package('nodejs') do
   it { should be_installed }
-  its('version') { should cmp > '8.10.0'}
+  its('version') { should cmp > '8.11.2*'}
 end
 
 describe npm('pm2') do
